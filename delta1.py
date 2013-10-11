@@ -33,7 +33,7 @@ def setServoPulse(channel, pulse):
 pwm.setPWMFreq(60)                        # Set frequency to 60 Hz
 
 def tap():
-  time,sleep(.5)
+  time.sleep(.5)
   pwm.setPWM(2, 0, 300)	
   time.sleep(.5)
   pwm.setPWM(2, 0, 500)
@@ -41,23 +41,21 @@ def tap():
   pwm.setPWM(2, 0, 300)
   print "tapped"
 
+def check_range(m):
+  if m < 150:
+    m = 150
+  elif m > 600:
+    m = 600
+  return m
+
 pwm.setPWM(1, 0, 375)
 time.sleep(.5)
 pwm.setPWM(2, 0, 300)
 while y != "no":
   print ">>>> M value is: ", m
-  m = int(raw_input("   Now what? >> "))
-  if  m > 149 and m < 601:
-    pwm.setPWM(1, 0, m)
-    time.sleep(.5)
-  elif m < 150:
-    m = 150
-    pwm.setPWM(1, 0, m)
-    time.sleep(.5)
-  elif m > 600:
-    m = 600
-    pwm.setPWM(1, 0, m)
-tap()
+  m = check_range(int(raw_input("   Now what? >> ")))
+  pwm.setPWM(1, 0, m)
+  tap()
 
 # END OF FILE
 
