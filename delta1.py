@@ -44,7 +44,7 @@ def tap():
 while y != "no":
   print ">>>> M value is: ", m
   m = int(raw_input("   Now what? >> "))
-  if m != "stop" and int(m) > 149 and int(m) < 601:
+  if m != "stop" and m > 149 and m < 601:
     pwm.setPWM(1, 0, m)
     time.sleep(.5)
     pwm.setPWM(2, 0, 300)	
@@ -52,7 +52,7 @@ while y != "no":
     pwm.setPWM(2, 0, 450)
     time.sleep(.5)
     pwm.setPWM(2, 0, 300)
-  elif int(m) < 150:
+  elif m< 150:
     m = 150
     pwm.setPWM(1, 0, m)
     time.sleep(.5)
@@ -61,7 +61,7 @@ while y != "no":
     pwm.setPWM(2, 0, 450)
     time.sleep(.5)
     pwm.setPWM(2, 0, 300)
-  elif int(m) > 600:
+  elif m> 600:
     m = 600
     pwm.setPWM(1, 0, m)
     time.sleep(.5)
