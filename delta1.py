@@ -34,42 +34,35 @@ pwm.setPWMFreq(60)                        # Set frequency to 60 Hz
 
 def tap():
   pwm.setPWM(2, 0, 300)	
-  pwm.setPWM(2, 0, 400)
-  pwm.setPWM(2, 0, 300)
-
-
-  pwm.setPWM(1, 0, 375)
+  time.sleep(.5)
+  pwm.setPWM(2, 0, 500)
   time.sleep(.5)
   pwm.setPWM(2, 0, 300)
+
+
+pwm.setPWM(1, 0, 375)
+time.sleep(.5)
+pwm.setPWM(2, 0, 300)
 while y != "no":
   print ">>>> M value is: ", m
   m = int(raw_input("   Now what? >> "))
   if m != "stop" and m > 149 and m < 601:
     pwm.setPWM(1, 0, m)
     time.sleep(.5)
-    pwm.setPWM(2, 0, 300)	
-    time.sleep(.5)
-    pwm.setPWM(2, 0, 450)
-    time.sleep(.5)
-    pwm.setPWM(2, 0, 300)
+    tap()
+    print "tapped"
   elif m < 150:
     m = 150
     pwm.setPWM(1, 0, m)
     time.sleep(.5)
-    pwm.setPWM(2, 0, 300)	
-    time.sleep(.5)
-    pwm.setPWM(2, 0, 450)
-    time.sleep(.5)
-    pwm.setPWM(2, 0, 300)
+    tap()
+    print "tapped"
   elif m > 600:
     m = 600
     pwm.setPWM(1, 0, m)
     time.sleep(.5)
-    pwm.setPWM(2, 0, 300)	
-    time.sleep(.5)
-    pwm.setPWM(2, 0, 400)
-    time.sleep(.5)
-    pwm.setPWM(2, 0, 300)
+    tap()
+    print "tapped"
   else:
     y = "no"
     print "murder she wrote"   
