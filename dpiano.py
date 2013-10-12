@@ -20,14 +20,25 @@ def setServoPulse(channel, pulse):
 
 pwm.setPWMFreq(60)                        # Set frequency to 60 Hz
 
-def snooze():
+def snooze1():
+  time.sleep(.5)
+
+def snooze2():
   time.sleep(.3)
 
-def tap():
+def tap1():
   pwm.setPWM(2, 0, 300)	
-  snooze()
+  snooze1()
   pwm.setPWM(2, 0, 450)
-  snooze()
+  snooze1()
+  pwm.setPWM(2, 0, 300)
+  print "tapped"
+
+def tap2():
+  pwm.setPWM(2, 0, 300)	
+  snooze2()
+  pwm.setPWM(2, 0, 450)
+  snooze2()
   pwm.setPWM(2, 0, 300)
   print "tapped"
 
@@ -40,24 +51,25 @@ def check_range(m):
 
 def jur():
   pwm.setPWM(1, 0, 600)
-  tap()
+  tap2()
+  print ">> C"
   pwm.setPWM(1, 0, 500)
-  tap()
+  tap2()
+  print ">> B"
   pwm.setPWM(1, 0, 600)
-  tap()
+  tap2()
+  print ">> C"
   pwm.setPWM(1, 0, 330)
-  tap()
+  tap1()
+  print ">> G"
   pwm.setPWM(1, 0, 255)
-  tap()
+  tap1()
+  print ">> F"
 
-pwm.setPWM(1, 0, 375)
+pwm.setPWM(2, 0, 305)
 time.sleep(.5)
-pwm.setPWM(2, 0, 300)
+pwm.setPWM(1, 0, 375)
 time.sleep(.1)
 
-jur()
-jur()
-jur()
-jur()
-jur()
-jur()
+while (True):
+  jur()
