@@ -3,21 +3,9 @@
 from Adafruit_PWM_Servo_Driver import PWM
 import time
 
-# ===========================================================================
-# Example Code
-# ===========================================================================
 
-# Initialise the PWM device using the default address.
-# bmp = PWM(0x40, debug=True)
 pwm = PWM(0x40, debug=True)
 
-servoMin = 150  # Min pulse length out of 4096
-servoMinn = 1  # Min pulse length out of 4096
-servoMax = 600  # Max pulse length out of 4096
-servoMid = 375
-servoMaxx = 740
-servoMaxxx = 760 
-y = "yes"
 m = 375
 
 def setServoPulse(channel, pulse):
@@ -32,12 +20,14 @@ def setServoPulse(channel, pulse):
 
 pwm.setPWMFreq(60)                        # Set frequency to 60 Hz
 
+def snooze():
+  time.sleep(.3)
+
 def tap():
-  time.sleep(.5)
   pwm.setPWM(2, 0, 300)	
-  time.sleep(.5)
-  pwm.setPWM(2, 0, 480)
-  time.sleep(.5)
+  snooze()
+  pwm.setPWM(2, 0, 450)
+  snooze()
   pwm.setPWM(2, 0, 300)
   print "tapped"
 
@@ -51,11 +41,27 @@ def check_range(m):
 pwm.setPWM(1, 0, 375)
 time.sleep(.5)
 pwm.setPWM(2, 0, 300)
-while y != "no":
-  print ">>>> M value is: ", m
-  m = check_range(int(raw_input("   Now what? >> ")))
-  pwm.setPWM(1, 0, m)
-  tap()
+time.sleep(.1)
+pwm.setPWM(1, 0, 600)
+tap()
+pwm.setPWM(1, 0, 500)
+tap()
+pwm.setPWM(1, 0, 600)
+tap()
+pwm.setPWM(1, 0, 330)
+tap()
+pwm.setPWM(1, 0, 255)
+tap()
 
+pwm.setPWM(1, 0, 600)
+tap()
+pwm.setPWM(1, 0, 500)
+tap()
+pwm.setPWM(1, 0, 600)
+tap()
+pwm.setPWM(1, 0, 330)
+tap()
+pwm.setPWM(1, 0, 255)
+tap()
 # END OF FILE
 
