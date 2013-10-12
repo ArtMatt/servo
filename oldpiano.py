@@ -1,3 +1,5 @@
+#!/usr/bin/python
+
 from Adafruit_PWM_Servo_Driver import PWM
 import time
 
@@ -18,25 +20,14 @@ def setServoPulse(channel, pulse):
 
 pwm.setPWMFreq(60)                        # Set frequency to 60 Hz
 
-def snooze1():
-  time.sleep(.5)
-
-def snooze2():
+def snooze():
   time.sleep(.3)
 
-def tap1():
+def tap():
   pwm.setPWM(2, 0, 300)	
-  snooze1()
+  snooze()
   pwm.setPWM(2, 0, 450)
-  snooze1()
-  pwm.setPWM(2, 0, 300)
-  print "tapped"
-
-def tap2():
-  pwm.setPWM(2, 0, 300)	
-  snooze2()
-  pwm.setPWM(2, 0, 450)
-  snooze2()
+  snooze()
   pwm.setPWM(2, 0, 300)
   print "tapped"
 
@@ -45,6 +36,32 @@ def check_range(m):
     m = 150
   elif m > 600:
     m = 600
-    return m
+  return m
 
-def jur():
+pwm.setPWM(1, 0, 375)
+time.sleep(.5)
+pwm.setPWM(2, 0, 300)
+time.sleep(.1)
+pwm.setPWM(1, 0, 600)
+tap()
+pwm.setPWM(1, 0, 500)
+tap()
+pwm.setPWM(1, 0, 600)
+tap()
+pwm.setPWM(1, 0, 330)
+tap()
+pwm.setPWM(1, 0, 255)
+tap()
+
+pwm.setPWM(1, 0, 600)
+tap()
+pwm.setPWM(1, 0, 500)
+tap()
+pwm.setPWM(1, 0, 600)
+tap()
+pwm.setPWM(1, 0, 330)
+tap()
+pwm.setPWM(1, 0, 255)
+tap()
+# END OF FILE
+

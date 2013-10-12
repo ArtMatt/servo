@@ -1,0 +1,53 @@
+commit 677f84aa77639f3bab8967eec748285392b656fa
+Author: ArtcroSoft <matthewgcasey@gmail.com>
+Date:   Sat Oct 12 02:24:39 2013 +0000
+
+    dpiano now loops to infinity with jur function, on dagobah
+
+commit b49b4eb00856eb9803216da807bafd2d7e6dfd0d
+Author: ArtcroSoft <matthewgcasey@gmail.com>
+Date:   Sat Oct 12 01:17:10 2013 +0000
+
+    created the piano file which contains some good methods and also plays the first five notes of the jurrasic park theme when configured properly, also the rebels have fleed to the rebel base of hoth
+
+commit b10ac80453dae3f292bdc3b32263e7ba39483253
+Author: ArtcroSoft <matthewgcasey@gmail.com>
+Date:   Fri Oct 11 21:34:18 2013 +0000
+
+    Abstracted hard code to check_range method, awesome job me
+
+commit 6dae0d95535cbb0a7b991b8475423cbc8d3e06b3
+Author: ArtcroSoft <matthewgcasey@gmail.com>
+Date:   Fri Oct 11 21:04:42 2013 +0000
+
+    removed redundancies outdated by tap method and deleted antiqued code
+
+commit 94d4fb5358c255a2cc0cb3c3c21dded02b053aca
+Author: ArtcroSoft <matthewgcasey@gmail.com>
+Date:   Fri Oct 11 20:58:01 2013 +0000
+
+    abstracted out tab functionality into method
+
+commit f54b96693fd4ace8361ce55a62b196ae5378ee5c
+Author: ArtcroSoft <matthewgcasey@gmail.com>
+Date:   Fri Oct 11 20:39:07 2013 +0000
+
+    fixed 'typo'
+
+commit 726348d5cc1ce9c0748a603e23e4befc3ac80887
+Author: ArtcroSoft <matthewgcasey@gmail.com>
+Date:   Fri Oct 11 20:23:40 2013 +0000
+
+    no more of those shitty int thingies
+
+commit 64d6e44c726c1f6587bcbb67e9452652977491ff
+Author: ArtcroSoft <matthewgcasey@gmail.com>
+Date:   Fri Oct 11 19:56:30 2013 +0000
+
+    delta2
+
+commit 351a51983c9018e2f3ebe6100c9c9bd0ae53f562
+Author: ArtcroSoft <matthewgcasey@gmail.com>
+Date:   Fri Oct 11 19:45:51 2013 +0000
+
+    delta

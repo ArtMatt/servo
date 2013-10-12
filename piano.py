@@ -20,6 +20,9 @@ def setServoPulse(channel, pulse):
 
 pwm.setPWMFreq(60)                        # Set frequency to 60 Hz
 
+notes = {'a': 1, 'b': 2, 'c': 3, 'd': 4, 'e': 5, 'f': 6, 'g': 7}
+
+
 def snooze():
   time.sleep(.3)
 
@@ -31,37 +34,7 @@ def tap():
   pwm.setPWM(2, 0, 300)
   print "tapped"
 
-def check_range(m):
-  if m < 150:
-    m = 150
-  elif m > 600:
-    m = 600
-  return m
+def player
+	
 
-pwm.setPWM(1, 0, 375)
-time.sleep(.5)
-pwm.setPWM(2, 0, 300)
-time.sleep(.1)
-pwm.setPWM(1, 0, 600)
-tap()
-pwm.setPWM(1, 0, 500)
-tap()
-pwm.setPWM(1, 0, 600)
-tap()
-pwm.setPWM(1, 0, 330)
-tap()
-pwm.setPWM(1, 0, 255)
-tap()
-
-pwm.setPWM(1, 0, 600)
-tap()
-pwm.setPWM(1, 0, 500)
-tap()
-pwm.setPWM(1, 0, 600)
-tap()
-pwm.setPWM(1, 0, 330)
-tap()
-pwm.setPWM(1, 0, 255)
-tap()
-# END OF FILE
-
+	
